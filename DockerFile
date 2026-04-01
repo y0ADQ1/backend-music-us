@@ -1,0 +1,24 @@
+# Usamos una imagen oficial de Node.js ligera
+FROM node:18-bullseye-slim
+
+# Instalamos Python y FFmpeg (Vitales para que yt-dlp funcione)
+RUN apt-get update && apt-get install -y python3 ffmpeg
+
+# Creamos la carpeta donde vivirá tu app en el servidor
+WORKDIR /app
+
+# Copiamos los archivos de dependencias e instalamos
+COPY package*.json ./
+RUN npm install
+
+# Copiamos todo el resto de tu código
+COPY . .
+
+# Compilamos TypeScript a JavaScript
+RUN npx tsc
+
+# Exponemos el puerto
+EXPOSE 3000
+
+# Comando para arrancar la API
+CMD ["node", "dist/index.js"]
