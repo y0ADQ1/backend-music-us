@@ -69,9 +69,11 @@ app.get('/api/download-audio', async (req: Request, res: Response): Promise<void
 
             cookies: path.join(__dirname, '../cookies.txt'),
 
-            format: 'best',
+            extractorArgs: 'youtube:player_client=android'
 
-        });
+        } as any);
+
+        console.log('Descarga y conversion completados')
 
 
 
