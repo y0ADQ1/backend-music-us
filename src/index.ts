@@ -44,6 +44,7 @@ app.get('/api/download-audio', async (req: Request, res: Response): Promise<void
             noWarnings: true,
             //callHome: false,
             ffmpegLocation: ffmpeg || undefined, 
+            cookies: path.join(__dirname, '../cookies.txt')
         });
 
         console.log('Descarga y conversion completados');
