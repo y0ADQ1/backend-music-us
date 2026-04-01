@@ -1,5 +1,5 @@
-# Usamos una imagen oficial de Node.js ligera
-FROM node:18-bullseye-slim
+# Usamos una imagen de Node.js basada en "bookworm" que trae Python 3.11
+FROM node:18-bookworm-slim
 
 # Instalamos Python y FFmpeg (Vitales para que yt-dlp funcione)
 RUN apt-get update && apt-get install -y python3 ffmpeg
