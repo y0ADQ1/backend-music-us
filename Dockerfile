@@ -1,5 +1,6 @@
 # Usamos una imagen de Node.js basada en "bookworm" que trae Python 3.11
-FROM node:18-bookworm-slim
+# Cambiamos de 18 a 20 para que desaparezcan los warnings amarillos
+FROM node:20-bookworm-slim
 
 # Instalamos Python y FFmpeg (Vitales para que yt-dlp funcione)
 RUN apt-get update && apt-get install -y python3 ffmpeg
