@@ -45,7 +45,7 @@ app.get('/api/download-audio', async (req: Request, res: Response): Promise<void
             //callHome: false,
             ffmpegLocation: ffmpeg || undefined, 
             cookies: path.join(__dirname, '../cookies.txt'),
-            format: 'bestaudio/best',
+            format: 'best',
         });
 
         console.log('Descarga y conversion completados');
