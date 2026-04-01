@@ -12,6 +12,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
+RUN npx youtube-dl-exec --update
+
 # Copiamos todo el resto de tu código
 COPY . .
 
